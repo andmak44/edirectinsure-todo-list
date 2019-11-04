@@ -1,0 +1,14 @@
+@import '../../assets/css/common';
+
+.projects {
+  width: 900px;
+  min-height: 900px;
+  @include box;
+  margin: 0;
+  padding:0 0 20px;
+
+  h1 {
+    @include box-item;
+    margin: 0;
+  }
+}

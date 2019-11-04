@@ -1,0 +1,14 @@
+@import '../../assets/css/common.scss';
+
+.sign-in {
+  @include sign-in-up;
+
+  h2 {
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,105 @@
+:root {
+  // hover-on
+  --img-transform: scale(1.3);
+  --img-transition: transform 3s cubic-bezier(0.19, 1, 0.22, 1);
+
+  //hover-off
+  --img-transform-off: scale(1);
+  --img-transition-off: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@mixin img-hover-on {
+  transform: scale(1.3);
+  transition: transform 3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@mixin img-hover-off {
+  transform: scale(1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@mixin sign-in-up {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin: 10px 0;
+  }
+}
+
+@mixin custom-button {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin box {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  padding: 0 15px 15px;
+  background: #ebedee;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+
+@mixin bg-grad {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+@mixin bg-grad-def {
+  background: rgb(35,99,7);
+  background: linear-gradient(0deg, rgba(35,99,7,1) 1%, rgba(56,204,34,1) 100%);
+}
+
+@mixin bg-grad-def-hover {
+  background: linear-gradient(0deg, rgba(56,204,34,1) 1%, rgba(35,99,7,1) 100%);
+}
+
+@mixin bg-grad-create {
+  background: rgb(5,121,111);
+  background: linear-gradient(0deg, rgba(5,121,111,1) 1%, rgba(34,204,201,1) 100%);
+}
+
+@mixin bg-grad-create-hover {
+  background: linear-gradient(0deg, rgba(34,204,201,1) 1%, rgba(5,121,111,1) 100%);
+}
+
+@mixin bg-grad-danger {
+  background: rgb(66,5,9);
+  background: linear-gradient(0deg, rgba(66,5,9,1) 1%, rgba(204,34,37,1) 100%);
+}
+
+@mixin bg-grad-danger-hover {
+  background: rgb(66,5,9);
+  background: linear-gradient(0deg, rgba(204,34,37,1) 1%, rgba(66,5,9,1) 100%);
+}
+
+@mixin box-item {
+  text-align: center;
+  @include bg-grad();
+  padding: 10px;
+  border-radius: 7px;
+  margin: 0 -15px;
+}
+
+@mixin input-box-item {
+  padding:11px;
+  line-height: 25px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+

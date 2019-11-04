@@ -1,0 +1,37 @@
+@import '../../assets/css/common';
+
+#create-project {
+  margin-top: 20px;
+  padding: 0 15px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  &.none {
+    display: none;
+  }
+
+  .input-pr {
+    @include input-box-item;
+    margin-right: 20px;
+    flex-grow: 2;
+  }
+
+  .input-btn {
+    @include input-box-item;
+    flex-grow: 1;
+    @include bg-grad-create;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      @include bg-grad-create-hover;
+    }
+    &.danger {
+      @include bg-grad-danger;
+      &:hover {
+        @include bg-grad-danger-hover;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+const TaskActionTypes = {
+  TASKS_STATE: 'TASKS_STATE',
+  EDIT_TASK: 'EDIT_TASK',
+  DELETE_TASK: 'DELETE_TASK',
+  DONE_TASK: 'DONE_TASK',
+  ADD_TASK: 'ADD_TASK',
+  COMPLETE_TASK: 'COMPLETE_TASK'
+}
+
+export default TaskActionTypes;

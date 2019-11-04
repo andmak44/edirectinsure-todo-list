@@ -1,0 +1,27 @@
+.todo {
+  line-height: 30px;
+  > span {
+    float: right;
+
+    span {
+      margin-left: 7px;
+      margin-right: 7px;
+      cursor: pointer;
+
+      &.done {
+        font-size: 1.3em;
+        color: green;
+        margin-bottom: -6px;
+      }
+    }
+  }
+}
+
+.taks.done {
+  padding: 6px;
+  &:nth-child(odd) {
+    background: #ddd;
+  }
+}
+
+

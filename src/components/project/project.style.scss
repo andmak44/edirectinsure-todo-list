@@ -1,0 +1,27 @@
+@import '../../assets/css/common';
+
+.project {
+  width: 80%;
+  @include box;
+
+  h3 {
+    @include box-item;
+  }
+
+  h5 {
+    margin: 20px;
+    font-size: 1.2em;
+  }
+
+  .tasks-box {
+    padding: 0 15px;
+    .task {
+      &.todo, &.done{
+        padding: 10px;
+        &:nth-child(odd) {
+          background: #ddd;
+        }
+      }
+    }
+  }
+}

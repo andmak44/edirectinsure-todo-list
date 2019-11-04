@@ -1,0 +1,19 @@
+@import '../../assets/css/common';
+
+.input-btn {
+  @include input-box-item;
+  flex-grow: 1;
+  @include bg-grad-def;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    @include bg-grad-def-hover;
+  }
+  &.danger {
+    @include bg-grad-danger;
+    &:hover {
+      @include bg-grad-danger-hover;
+    }
+  }
+}

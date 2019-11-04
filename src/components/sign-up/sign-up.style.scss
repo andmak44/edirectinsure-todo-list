@@ -1,0 +1,4 @@
+@import '../../assets/css/common.scss';
+.sign-up {
+  @include sign-in-up;
+}
