@@ -1,5 +1,6 @@
 import React from 'react';
 import './sign-in.style.scss';
+import urls from '../../assets/urls/url';
 import FormInput from '../form-input/form-input';
 import CustomButton from '../custom-button/custom-button';
 import {connect} from 'react-redux';
@@ -20,7 +21,7 @@ class SignIn extends React.Component{
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const url = 'http://localhost:3006/api/v1/user/login';
+    const url = urls.login;
     const {email, password} = this.state;
     try {
       const data = {
@@ -67,6 +68,7 @@ class SignIn extends React.Component{
             handleChange={this.handleChange} 
             value={this.state.email} 
             label='email'
+            svgid='envelop'
             required />
 
           <FormInput 
@@ -75,9 +77,10 @@ class SignIn extends React.Component{
             handleChange={this.handleChange} 
             value={this.state.password} 
             label='password'
+            svgid='lock'
             required />
           <div className="buttons">
-            <CustomButton type='submit'>sign in</CustomButton>
+            <CustomButton type='submit'>Sign In</CustomButton>
           </div>
 
         </form>

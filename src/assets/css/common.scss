@@ -8,6 +8,22 @@
   --img-transition-off: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+$sub-color: grey;
+$main-color: black;
+
+svg {
+  width: 24px;
+  height: 24px;
+  --user-fill: #aaa;
+  --lock-fill: #aaa;
+  --envelop-fill: #aaa;
+  --check-fill: #aaa;
+  --edit-fill: #aaa;
+  --desc-fill: #aaa;
+  --bin-fill: #aaa;
+  --cross-fill: #aaa;
+}
+
 @mixin img-hover-on {
   transform: scale(1.3);
   transition: transform 3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -16,6 +32,14 @@
 @mixin img-hover-off {
   transform: scale(1);
   transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@mixin log-in-reg-box {
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 0;
+  position: relative;
 }
 
 @mixin sign-in-up {
@@ -28,23 +52,6 @@
   }
 }
 
-@mixin custom-button {
-  min-width: 165px;
-  width: auto;
-  height: 50px;
-  letter-spacing: 0.5px;
-  line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
-  font-weight: bolder;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-}
-
 @mixin box {
   display: flex;
   flex-direction: column;
@@ -53,6 +60,95 @@
   background: #ebedee;
   border: 1px solid #ccc;
   border-radius: 7px;
+}
+
+@mixin box-item {
+  text-align: center;
+  @include bg-grad();
+  padding: 10px;
+  border-radius: 7px;
+  margin: 0 -15px;
+}
+
+@mixin input-box-item {
+  padding:11px;
+  line-height: 25px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+
+// buttons
+
+@mixin box-shadow-transition {
+  transition: box-shadow .3s linear;
+}
+
+@mixin custom-button {
+  min-width: 155px;
+  width: auto;
+  height: 50px;
+  color: white;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  // text-transform: uppercase;
+  font-family: Georgia,'Open Sans Condensed',serif;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 7px;
+  background: rgb(75,126,62);
+  background: linear-gradient(to bottom right, rgb(75,126,62) 2%, rgb(36,71,31) 66%);
+  box-shadow: rgb(36,71,31) 3px 3px 7px 2px;
+  text-shadow: rgb(0,0,0) 1px 1px 1px;
+}
+
+@mixin custom-button-hover {
+  background: rgb(36,71,31);
+  box-shadow: none;
+}
+
+@mixin shrinkLabel {
+  top: -14px;
+  font-size: 12px;
+  color: $sub-color;
+}
+
+@mixin log-reg-icon {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@mixin log-in-reg-link {
+  &:focus, &:hover, &:visited, &:link, &:active {
+      display: table;
+      min-width: 155px;
+      text-align: center;
+      font-family: Georgia,'Open Sans Condensed',serif;
+      text-decoration: none;
+      padding: 15px 15px;
+      border-radius: 7px;
+      background: rgb(125,125,125);
+      background: linear-gradient(to bottom right, rgb(125,125,125) 2%, rgb(46,46,46) 66%);
+      box-shadow: rgb(66,66,66) 3px 3px 7px 2px;
+      text-shadow: rgb(0,0,0) 1px 1px 1px;
+      color: white;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  }
+}
+
+@mixin log-in-reg-link-hover {
+  background:rgb(66,66,66);//linear-gradient(to bottom right, rgba(46,46,46,1) 50%, rgba(125,125,125,1) 100%);
+  box-shadow: none;
 }
 
 @mixin bg-grad {
@@ -86,20 +182,3 @@
   background: rgb(66,5,9);
   background: linear-gradient(0deg, rgba(204,34,37,1) 1%, rgba(66,5,9,1) 100%);
 }
-
-@mixin box-item {
-  text-align: center;
-  @include bg-grad();
-  padding: 10px;
-  border-radius: 7px;
-  margin: 0 -15px;
-}
-
-@mixin input-box-item {
-  padding:11px;
-  line-height: 25px;
-  font-size: 20px;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-}
-

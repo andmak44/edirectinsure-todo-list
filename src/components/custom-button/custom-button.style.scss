@@ -1,14 +1,11 @@
 @import '../../assets/css/common';
 
 .custom-button {
+  @include box-shadow-transition;
   @include custom-button;
-  background-color: black;
-  color: white;
 
   &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    @include custom-button-hover;
   }
 
   &.inverted {

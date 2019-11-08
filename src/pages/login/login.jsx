@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const LoginPage = () => (
   <div className="login">
     <SignIn />
-    <Link to='./register'>I do not have account</Link>
+    <Link to='./register' className='register-link'>I do not have account</Link>
   </div>
 );
 

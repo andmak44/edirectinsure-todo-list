@@ -1,6 +1,14 @@
+@import '../../assets/css/common';
+
 .login {
-  width: 900px;
-  display: flex;
-  justify-content: center;
-  margin: 30px auto 0;
+  @include log-in-reg-box;
+
+  .register-link {
+    @include box-shadow-transition;
+    @include log-in-reg-link;
+    
+    &:hover {
+      @include log-in-reg-link-hover;
+    }
+  }
 }

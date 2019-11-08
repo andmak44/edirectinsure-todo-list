@@ -1,5 +1,6 @@
 import React from 'react';
 import './sign-up.style.scss';
+import urls from '../../assets/urls/url';
 import FormInput from '../form-input/form-input';
 import CustomButton from '../custom-button/custom-button';
 import {connect} from 'react-redux';
@@ -22,7 +23,7 @@ class SignUp extends React.Component{
 
   handleSubmit = async e => {
     e.preventDefault();
-    const url = 'http://localhost:3006/api/v1/user';
+    const url = urls.signup;
     const { name, email, password, confirmPassword} = this.state;
 
     if (password !== confirmPassword) {
@@ -69,10 +70,10 @@ class SignUp extends React.Component{
       <div className="sign-up">
         <span>Sign up with your email and password</span>
         <form className='sign-up-form' onSubmit={this.handleSubmit}>
-          <FormInput type='text' name='name' value={name} onChange= {this.handleChange} label='Name' required/>
-          <FormInput type='email' name='email' value={email} onChange= {this.handleChange} label='Email' required/>
-          <FormInput type='password' name='password' value={password} onChange= {this.handleChange} label='Password' required/>
-          <FormInput type='password' name='confirmPassword' value={confirmPassword} onChange= {this.handleChange} label='Confirm Password' required/>
+          <FormInput type='text' name='name' value={name} onChange= {this.handleChange} label='Name' svgid='user' required/>
+          <FormInput type='email' name='email' value={email} onChange= {this.handleChange} label='Email' svgid='envelop' required/>
+          <FormInput type='password' name='password' value={password} onChange= {this.handleChange} label='Password' svgid='lock' required/>
+          <FormInput type='password' name='confirmPassword' value={confirmPassword} onChange= {this.handleChange} label='Confirm Password' svgid='lock' required/>
           <CustomButton type='submit'>Sign Up</CustomButton>
         </form>
       </div>

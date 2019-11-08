@@ -17,18 +17,15 @@
 
       .logout {
         display: none;
+          height: 36px;
+          line-height: 36px;
+          position: absolute;
+          right: -5px;
+          z-index: 1;
       }
       &:hover {
         .logout {
           display: block;
-          position: absolute;
-          right: -5px;
-          width: 100px;
-          padding-bottom: 3px;
-          padding-top: 3px;
-          border: 1px solid #bbb;
-          border-radius: 5px;
-          @include bg-grad();
         }
       }
     }

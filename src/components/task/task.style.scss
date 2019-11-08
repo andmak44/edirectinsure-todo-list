@@ -1,27 +1,49 @@
+@import '../../assets/css/common';
+
 .todo {
-  line-height: 30px;
-  > span {
+  line-height: 24px;
+
+
+
+  .task-svg-icons {
     float: right;
 
-    span {
-      margin-left: 7px;
-      margin-right: 7px;
+    svg {
+      width: 24px;
+      height: 24px;
+      margin: 0 6px;
       cursor: pointer;
-
-      &.done {
-        font-size: 1.3em;
-        color: green;
-        margin-bottom: -6px;
+      
+      .done-svg {
+        --check-fill: #aaa;
+      }
+      .edit-svg {
+        --edit-fill: #aaa;
+      }
+      .delete-svg {
+        --bin-fill: #aaa;
+      }
+      &.done:hover {
+        .done-svg {
+          --check-fill: #267426;
+        }
+      }
+      &.edit:hover {
+        .edit-svg {
+          --edit-fill: #1E90FF;
+        }
+      }
+      &.delete:hover {
+        .delete-svg {
+          --bin-fill: #f00;
+        }
       }
     }
   }
 }
 
 .taks.done {
-  padding: 6px;
   &:nth-child(odd) {
     background: #ddd;
   }
 }
-
-

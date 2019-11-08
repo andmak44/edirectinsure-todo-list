@@ -14,18 +14,6 @@ class Project extends React.Component {
     this.state = { tasks: [], todo: [], done: [], inputField: '', inputFieldDesc: '', editField: '', editFieldDesc: '' }
   }
 
-  handleEdit = (taskEdit, prId) => {
-    const dvBoxId = `#edit${prId}`;
-    const dvBoxAddId = `#add${prId}`;
-    const editBox = document.querySelector(`${dvBoxId}`);
-    editBox.setAttribute('task-id', taskEdit._id);
-    document.querySelector(`${dvBoxAddId}`).classList.add('none');
-    editBox.classList.remove('none');
-    editBox.querySelector('.input-cm').value = `${taskEdit.name}`;
-    editBox.querySelector('.input-desc').value = `${taskEdit.description}`;
-    this.setState({editField : taskEdit.name, editFieldDesc: taskEdit.description});
-  }
-
   handleChange = e => {
     e.target.classList.contains('name-edit') 
       ? this.setState({editField : e.target.value}) 
@@ -39,7 +27,7 @@ class Project extends React.Component {
   }
 
   toggleDesc = e => {
-    e.target.previousSibling.classList.toggle('none');
+    e.currentTarget.previousSibling.classList.toggle('none');
   }
 
   handleDone = task => {
@@ -53,6 +41,25 @@ class Project extends React.Component {
       .then(data => data.json())
       .then(res => this.props.doneTask(task));
     } catch (err) { console.log(err); }
+  }
+
+  handleEdit = (taskEdit, prId) => {
+    const dvBoxEditId = `#edit${prId}`;
+    const dvBoxAddId = `#add${prId}`;
+    const editBox = document.querySelector(`${dvBoxEditId}`);
+    const currentTaskId = editBox.getAttribute('task-id');
+        
+    editBox.querySelector('.input-cm').value = `${taskEdit.name}`;
+    editBox.querySelector('.input-desc').value = `${taskEdit.description}`;
+
+    if (!currentTaskId || currentTaskId === taskEdit._id) {
+      document.querySelector(`${dvBoxAddId}`).classList.toggle('none');
+      editBox.classList.toggle('none');
+    }
+
+    editBox.setAttribute('task-id', taskEdit._id);
+
+    this.setState({editField : taskEdit.name, editFieldDesc: taskEdit.description});
   }
 
   handleDelete = (task, projId) => {
@@ -129,7 +136,7 @@ class Project extends React.Component {
           handleChange={this.handleChange}
           handleClick={this.handleClick}
           handleChangeDesc={this.handleChangeDesc}
-          toggleDesc={e=>e.preventDefault()}
+          toggleDesc={this.toggleDesc}
           description={true}
           placeholderDesc='Description'
           nameVal={this.state.editField}

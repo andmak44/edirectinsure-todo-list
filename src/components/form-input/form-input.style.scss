@@ -1,11 +1,5 @@
-$sub-color: grey;
-$main-color: black;
+@import '../../assets/css/common';
 
-@mixin shrinkLabel {
-  top: -14px;
-  font-size: 12px;
-  color: $main-color;
-}
 
 .group {
   position: relative;
@@ -50,5 +44,9 @@ $main-color: black;
     &.shrink {
       @include shrinkLabel();
     }
+  }
+
+  .log-reg-icon {
+    @include log-reg-icon;
   }
 }

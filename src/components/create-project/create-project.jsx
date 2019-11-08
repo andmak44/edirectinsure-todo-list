@@ -6,6 +6,7 @@ import {setCurrentUser} from '../../redux/user/user.actions';
 import {selectCurrentUser} from '../../redux/user/user.selector';
 import {selectProjectToCreate} from '../../redux/project/project.selector';
 import {createProject} from '../../redux/project/project.actions';
+import CustomButton from '../custom-button/custom-button';
 
 class CreateProject extends React.Component {
   constructor(props){
@@ -46,7 +47,7 @@ class CreateProject extends React.Component {
       <div id='create-project'>
         <input className='input-pr' type='text' placeholder='Project name'
           onChange={this.handleChange} />
-        <div className='input-btn' onClick={this.createProject}>Create Project</div>
+        <CustomButton type='button' onClick={this.createProject}>Create Project</CustomButton>
       </div>
     )
   }

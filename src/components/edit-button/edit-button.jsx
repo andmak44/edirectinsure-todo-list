@@ -1,5 +1,6 @@
 import React from 'react';
 import './edit-button.style.scss';
+import CustomButton from '../custom-button/custom-button';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
@@ -51,7 +52,9 @@ class EditButton extends React.Component {
   }
 
   render () {
-    return (<div className={'input-btn danger'} onClick={this.editTask}>Edit</div>)
+    return (
+      <CustomButton type='button' onClick={this.editTask}>Edit</CustomButton>
+    )
   }
 }
 

@@ -10,6 +10,24 @@
     display: none;
   }
 
+  svg.desc {
+    width: 24px;
+    height: 24px;
+    line-height: 45px;
+    margin: 13px 10px 0 -20px;
+    display: block;
+    cursor: pointer;
+    
+    .desc-svg {
+      --desc-fill: #aaa;
+    }
+    &.desc:hover {
+      .desc-svg {
+        --desc-fill: #1E90FF;
+      }
+    }
+  }
+
   .input-cm {
     @include input-box-item;
     margin-right: 30px;
@@ -19,38 +37,12 @@
   .input-desc {
     @include input-box-item;
     position: absolute;
-    top: 50px;
+    top: 55px;
     width: 90%;
+    box-shadow: rgb(36,71,31) 3px 3px 7px 3px;
 
     &.none {
       display: none;
-    }
-  }
-
-  .desc-icon {
-    line-height: 45px;
-    margin-left: -20px;
-    margin-right: 10px;
-    font-size: 35px;
-    cursor: pointer;
-    color: #88d;
-  }
-
-  .input-btn {
-    @include input-box-item;
-    flex-grow: 1;
-    @include bg-grad-def;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    &:hover {
-      @include bg-grad-def-hover;
-    }
-    &.danger {
-      @include bg-grad-danger;
-      &:hover {
-        @include bg-grad-danger-hover;
-      }
     }
   }
 }

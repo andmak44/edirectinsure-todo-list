@@ -1,9 +1,9 @@
 import React from 'react';
 import './projects.style.scss';
+import urls from '../../assets/urls/url';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from '../../redux/user/user.selector';
-// import {} from '../../redux/projects/projects.selector';
 import {selecttaskToChange} from '../../redux/task/task.selector';
 import {selectProjectToCreate} from '../../redux/project/project.selector';
 import {addTask, doneTask, editTask, completeTask} from '../../redux/task/task.actions';
@@ -22,8 +22,8 @@ class ProjectsPage extends React.Component {
 
   getTasks = () => {
     const userId = this.props.currentUser._id;
-
-    const url = `http://localhost:3006/api/v1/project/task/${userId}`;
+    // const url = `http://localhost:3006/api/v1/project/task/${userId}`;
+    const url = urls.projectsTasksByUserId(userId);
     try {
       fetch(url)
       .then(data => data.json())
@@ -68,7 +68,7 @@ class ProjectsPage extends React.Component {
   render() {
     return (
       <div className="projects">
-        <h1>EDirectInsure TODO List</h1>
+        <h1>My TODO List</h1>
         <CreateProject />
         {this.state.projects}
       </div>

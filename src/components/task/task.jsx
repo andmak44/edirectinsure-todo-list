@@ -1,6 +1,7 @@
 import React from 'react';
 import './task.style.scss';
 import {connect} from 'react-redux';
+import SvgIcon from '../svg-component/svg-component';
 import {editTask, deleteTask, doneTask} from '../../redux/task/task.actions';
 
 const Task = ({task, projId, handleEdit, handleDelete, handleDone}) => {
@@ -9,12 +10,11 @@ const Task = ({task, projId, handleEdit, handleDelete, handleDone}) => {
     <div id={task._id} className={`task ${task.finished ? 'done' : 'todo'}`}>
       {task.name}  
       {task.finished ? '' 
-        : (<span>
-            <span className='done' title='done' onClick={()=>{handleDone(task, projId);}}>&#10004;</span>
-            <span className='edit' title='edit' onClick={()=>{handleEdit(task, projId);}}>&#9997;</span>
-            <span className='delete' title='delete' onClick={()=>handleDelete(task, projId)}>&#10060;</span>
+        : (<span className='task-svg-icons'>
+            <SvgIcon boxClassName='done' className='done-svg' viewBox='0 0 32 32' title='Done' svgId='check' onClick={()=>{handleDone(task, projId);}} />
+            <SvgIcon boxClassName='edit' className='edit-svg' viewBox='0 0 32 32' title='Edit' svgId='edit' onClick={()=>{handleEdit(task, projId);}} />
+            <SvgIcon boxClassName='delete' className='delete-svg' viewBox='0 0 32 32' title='Done' svgId='bin' onClick={()=>{handleDelete(task, projId);}} />
           </span>)}
-      
     </div>
   );
 }
