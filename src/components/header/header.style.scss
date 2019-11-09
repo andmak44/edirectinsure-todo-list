@@ -1,5 +1,5 @@
 @import '../../assets/css/common';
-
+$showTime: 300ms;
 .header {
   position: absolute;
   top: 20px;
@@ -16,16 +16,19 @@
       cursor: pointer;
 
       .logout {
-        display: none;
-          height: 36px;
-          line-height: 36px;
-          position: absolute;
-          right: -5px;
-          z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility $showTime, opacity $showTime;
+        height: 36px;
+        line-height: 36px;
+        position: absolute;
+        right: -5px;
+        z-index: 1;
       }
       &:hover {
         .logout {
-          display: block;
+          visibility: visible;
+          opacity: 1;
         }
       }
     }
