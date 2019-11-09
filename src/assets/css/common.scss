@@ -10,6 +10,8 @@
 
 $sub-color: grey;
 $main-color: black;
+$txt-shadow: rgb(0,0,0) 1px 1px 2px;
+$bx-shadow: 3px 3px 7px 2px;
 
 svg {
   width: 24px;
@@ -103,8 +105,8 @@ svg {
   border-radius: 7px;
   background: rgb(75,126,62);
   background: linear-gradient(to bottom right, rgb(75,126,62) 2%, rgb(36,71,31) 66%);
-  box-shadow: rgb(36,71,31) 3px 3px 7px 2px;
-  text-shadow: rgb(0,0,0) 1px 1px 1px;
+  box-shadow: rgb(36,71,31) $bx-shadow;
+  text-shadow: $txt-shadow;
 }
 
 @mixin custom-button-hover {
@@ -137,8 +139,8 @@ svg {
       border-radius: 7px;
       background: rgb(125,125,125);
       background: linear-gradient(to bottom right, rgb(125,125,125) 2%, rgb(46,46,46) 66%);
-      box-shadow: rgb(66,66,66) 3px 3px 7px 2px;
-      text-shadow: rgb(0,0,0) 1px 1px 1px;
+      box-shadow: rgb(66,66,66) $bx-shadow;
+      text-shadow: $txt-shadow;
       color: white;
       position: absolute;
       right: 0;

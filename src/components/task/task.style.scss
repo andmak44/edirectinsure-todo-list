@@ -1,49 +1,68 @@
 @import '../../assets/css/common';
 
-.todo {
-  line-height: 24px;
+.task {
+  &.todo, &.done{
+    padding: 10px;
+    &:nth-child(odd) {
+      background: #ddd;
+    }
+  }
 
+  &.todo {
+    line-height: 24px;
 
+    .task-svg-icons {
+      float: right;
 
-  .task-svg-icons {
-    float: right;
-
-    svg {
-      width: 24px;
-      height: 24px;
-      margin: 0 6px;
-      cursor: pointer;
-      
-      .done-svg {
-        --check-fill: #aaa;
-      }
-      .edit-svg {
-        --edit-fill: #aaa;
-      }
-      .delete-svg {
-        --bin-fill: #aaa;
-      }
-      &.done:hover {
+      svg {
+        width: 24px;
+        height: 24px;
+        margin: 0 6px;
+        cursor: pointer;
+        
         .done-svg {
-          --check-fill: #267426;
+          --check-fill: #aaa;
         }
-      }
-      &.edit:hover {
         .edit-svg {
-          --edit-fill: #1E90FF;
+          --edit-fill: #aaa;
         }
-      }
-      &.delete:hover {
         .delete-svg {
-          --bin-fill: #f00;
+          --bin-fill: #aaa;
+        }
+        &.done:hover {
+          .done-svg {
+            --check-fill: #267426;
+          }
+        }
+        &.edit:hover {
+          .edit-svg {
+            --edit-fill: #1E90FF;
+          }
+        }
+        &.delete:hover {
+          .delete-svg {
+            --bin-fill: #f00;
+          }
         }
       }
     }
   }
-}
 
-.taks.done {
-  &:nth-child(odd) {
-    background: #ddd;
+  &.done {
+    color: green;
+    position: relative;
+    &:hover::before {
+      content: attr(mytitle);
+      position:absolute;
+      top: -35px;
+      left: 30;
+      border-radius: 3px;
+      padding: 7px;
+      background: rgba(70, 102, 70, .8);
+      color: white;
+      text-shadow: $txt-shadow;
+      box-shadow: rgb(70, 102, 70) $bx-shadow;
+    }
+
   }
 }

@@ -17,3 +17,7 @@ code {
   margin: 0 auto;
   position: relative;
 }
+
+:not(input) {
+  user-select: none;
+}

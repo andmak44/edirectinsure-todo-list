@@ -15,13 +15,5 @@
 
   .tasks-box {
     padding: 0 15px;
-    .task {
-      &.todo, &.done{
-        padding: 10px;
-        &:nth-child(odd) {
-          background: #ddd;
-        }
-      }
-    }
   }
 }

@@ -4,10 +4,10 @@ import {connect} from 'react-redux';
 import SvgIcon from '../svg-component/svg-component';
 import {editTask, deleteTask, doneTask} from '../../redux/task/task.actions';
 
-const Task = ({task, projId, handleEdit, handleDelete, handleDone}) => {
+const Task = ({task, projId, handleEdit, handleDelete, handleDone, title}) => {
 
   return (
-    <div id={task._id} className={`task ${task.finished ? 'done' : 'todo'}`}>
+    <div id={task._id} className={`task ${task.finished ? 'done' : 'todo'}`} mytitle={title}>
       {task.name}  
       {task.finished ? '' 
         : (<span className='task-svg-icons'>

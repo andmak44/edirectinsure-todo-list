@@ -105,7 +105,10 @@ class Project extends React.Component {
       return (<Task key={task._id} task={task} projId={projId} handleEdit={this.handleEdit} handleDelete={this.handleDelete} handleDone={this.handleDone} />);
     })
     const tasksDone = done.map( task => {
-      return (<Task key={task._id} task={task} projId={projId} handleEdit={this.handleEdit} />);
+      const dateTime = task.finished.split('T');
+      const date = dateTime[0];
+      const time = dateTime[1].split('.')[0];
+      return (<Task key={task._id} task={task} projId={projId} handleEdit={this.handleEdit} title={`finished in ${date} at ${time}`}/>);
     })
     this.setState({tasks: {todo:tasksTodo, done:tasksDone}});
   }
